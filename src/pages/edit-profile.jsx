@@ -2,7 +2,7 @@ import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
 import EditProfile from '../components/edit-profile';
 
-const Dashboard = () => {
+const EditProfilePage = () => {
   return (
     <div className="container">
       <Navbar />
@@ -16,4 +16,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default EditProfilePage;
