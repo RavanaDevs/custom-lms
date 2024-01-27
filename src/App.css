@@ -2,6 +2,10 @@
     max-width: 1440px;
     margin: 0 auto;
   }
+
+  .body{
+    display: flex;
+  }
   
   .content {
     flex: 1;
@@ -9,7 +13,7 @@
   }
   
   @media screen and (max-width: 768px) {
-    .container {
+    .body {
         display: flex;
       flex-direction: column;
     }
