@@ -1,12 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JavaScript
 import './Navbar.css'; // Custom styles
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Your LMS</a>
+        <a className="navbar-brand" href="/">Your LMS</a>
         <button
           className="navbar-toggler"
           type="button"

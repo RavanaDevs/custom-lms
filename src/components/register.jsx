@@ -1,14 +1,22 @@
 import { useState } from 'react';
-import './Login.css'; // Custom styles
+import './login.css'; // Custom styles
+import signUpWithEmailAndPassword from '../services/auth/sign-up';
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your login logic here
+
+    if (password != confirmPassword) {
+      //TODO: show tost message of the error
+      return;
+    }
+
+    await signUpWithEmailAndPassword(email, password);
+    window.location = '/';
   };
 
   return (
@@ -46,13 +54,13 @@ const Register = () => {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="password" className="form-label">
+              <label htmlFor="confirm-password" className="form-label">
                 Confirm Password
               </label>
               <input
                 type="password"
                 className="form-control"
-                id="password"
+                id="confirm-password"
                 placeholder="Confirm your password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
