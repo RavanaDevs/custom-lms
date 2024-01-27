@@ -16,7 +16,10 @@ const Sidebar = () => {
       <div className="links">
         <ul className="sidebar-links">
           <li>
-            <a href="#">Dashboard</a>
+            <a href="/">Dashboard</a>
+          </li>
+          <li>
+            <a href="/edit-profile">My Profile</a>
           </li>
           <li>
             <a href="#">Courses</a>
