@@ -1,0 +1,70 @@
+/* Sidebar.css */
+
+.sidebar {
+  width: 250px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.profile {
+  margin-bottom: 20px;
+}
+
+.profile-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.role-indicator {
+  font-size: 14px;
+  color: #666;
+  margin-left: 15px;
+}
+
+.sidebar-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  margin-bottom: 10px;
+}
+
+.sidebar-links li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.logout-btn {
+  background-color: #c00;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #900;
+}
+
+
+@media screen and (max-width: 768px) {
+  .sidebar{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    min-height: auto;
+  }
+}
