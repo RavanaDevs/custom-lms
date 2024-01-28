@@ -1,16 +1,16 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './edit-profile.css'; // Custom styles
 
 const EditProfile = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
-  const [addressLine1, setAddressLine1] = useState('');
-  const [addressLine2, setAddressLine2] = useState('');
-  const [profileImage, setProfileImage] = useState('');
-  const [mobileNumber, setMobileNumber] = useState('');
+  const firstName = useRef();
+  const lastName = useRef();
+  const email = useRef();
+  const username = useRef();
+  const addressLine1 = useRef();
+  const addressLine2 = useRef();
+  const profileImage = useRef();
+  const mobileNumber = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,8 +28,7 @@ const EditProfile = () => {
               type="text"
               className="form-control"
               id="firstName"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              ref={firstName}
               required
             />
           </div>
@@ -39,8 +38,7 @@ const EditProfile = () => {
               type="text"
               className="form-control"
               id="lastName"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              ref={lastName}
               required
             />
           </div>
@@ -52,8 +50,7 @@ const EditProfile = () => {
               type="email"
               className="form-control"
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              ref={email}
               required
             />
           </div>
@@ -63,8 +60,7 @@ const EditProfile = () => {
               type="text"
               className="form-control"
               id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              ref={username}
               required
             />
           </div>
@@ -75,8 +71,7 @@ const EditProfile = () => {
             type="text"
             className="form-control"
             id="addressLine1"
-            value={addressLine1}
-            onChange={(e) => setAddressLine1(e.target.value)}
+            ref={addressLine1}
             required
           />
         </div>
@@ -86,8 +81,7 @@ const EditProfile = () => {
             type="text"
             className="form-control"
             id="addressLine2"
-            value={addressLine2}
-            onChange={(e) => setAddressLine2(e.target.value)}
+            ref={addressLine2}
           />
         </div>
         <div className="form-group">
@@ -96,7 +90,7 @@ const EditProfile = () => {
             type="file"
             className="form-control-file"
             id="profileImage"
-            onChange={(e) => setProfileImage(e.target.files[0])}
+            ref={profileImage}
           />
         </div>
         <div className="form-group">
@@ -105,12 +99,13 @@ const EditProfile = () => {
             type="tel"
             className="form-control"
             id="mobileNumber"
-            value={mobileNumber}
-            onChange={(e) => setMobileNumber(e.target.value)}
+            ref={mobileNumber}
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">Save Changes</button>
+        <button type="submit" className="btn btn-primary">
+          Save Changes
+        </button>
       </form>
     </div>
   );

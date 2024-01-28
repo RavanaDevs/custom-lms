@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add your login logic here
+
+    // console.log(emailRef.current.value);
   };
 
   return (
@@ -25,8 +28,7 @@ const Login = () => {
                 className="form-control"
                 id="email"
                 placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                ref={emailRef}
                 required
               />
             </div>
@@ -39,8 +41,7 @@ const Login = () => {
                 className="form-control"
                 id="password"
                 placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                ref={passwordRef}
                 required
               />
             </div>
@@ -49,9 +50,7 @@ const Login = () => {
             </button>
 
             <div className="mt-4">
-              <a href="/register" className="form-link">
-                Register
-              </a>
+              <Link to="/register">Register</Link>
             </div>
           </form>
         </div>

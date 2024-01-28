@@ -7,10 +7,10 @@ const EditProfilePage = () => {
     <div className="container">
       <Navbar />
       <div className="body">
-      <Sidebar />
-      <div className="content">
-        <EditProfile/>
-      </div>
+        <Sidebar />
+        <div className="content">
+          <EditProfile />
+        </div>
       </div>
     </div>
   );

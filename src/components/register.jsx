@@ -1,22 +1,14 @@
-import { useState } from 'react';
-import './login.css'; // Custom styles
-import signUpWithEmailAndPassword from '../services/auth/sign-up';
+import { useRef } from 'react';
+import './login.css';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const confirmPasswordRef = useRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (password != confirmPassword) {
-      //TODO: show tost message of the error
-      return;
-    }
-
-    await signUpWithEmailAndPassword(email, password);
-    window.location = '/';
   };
 
   return (
@@ -34,8 +26,7 @@ const Register = () => {
                 className="form-control"
                 id="email"
                 placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                ref={emailRef}
                 required
               />
             </div>
@@ -48,8 +39,7 @@ const Register = () => {
                 className="form-control"
                 id="password"
                 placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                ref={passwordRef}
                 required
               />
             </div>
@@ -62,8 +52,7 @@ const Register = () => {
                 className="form-control"
                 id="confirm-password"
                 placeholder="Confirm your password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                ref={confirmPasswordRef}
                 required
               />
             </div>
@@ -71,9 +60,7 @@ const Register = () => {
               Register
             </button>
             <div className="mt-4">
-              <a href="/login" className="form-link">
-                Login
-              </a>
+              <Link to="/login">Register</Link>
             </div>
           </form>
         </div>

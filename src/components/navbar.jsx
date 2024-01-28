@@ -1,10 +1,13 @@
-import './Navbar.css'; // Custom styles
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">Your LMS</a>
+        <Link className="navbar-brand" to="/">
+          Your LMS
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -19,13 +22,19 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#">Link 1</a>
+              <Link className="nav-link" to="#">
+                Link 1
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Link 2</a>
+              <Link className="nav-link" to="#">
+                Link 2
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Link 3</a>
+              <Link className="nav-link" to="#">
+                Link 3
+              </Link>
             </li>
           </ul>
           <div className="d-flex">

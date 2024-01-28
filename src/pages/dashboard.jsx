@@ -6,9 +6,8 @@ const Dashboard = () => {
     <div className="container">
       <Navbar />
       <div className="body">
-      <Sidebar />
-      <div className="content">
-      </div>
+        <Sidebar />
+        <div className="content"></div>
       </div>
     </div>
   );
